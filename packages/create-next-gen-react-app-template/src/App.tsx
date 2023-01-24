@@ -2,6 +2,8 @@ import React from "react";
 import Logo from "./logo.svg";
 import "./App.css";
 
+import CheckboxWithLabel from "./CheckboxWithLabel";
+
 function App() {
 	return (
 		<div className="App">
@@ -14,6 +16,11 @@ function App() {
 			<h1 className="title">React</h1>
 
 			<div>
+				<CheckboxWithLabel
+					labelOff={"Off"}
+					labelOn={"On"}
+				/>
+
 				<p>Edit src\App.tsx and save to reload.</p>
 				<a
 					className="link"

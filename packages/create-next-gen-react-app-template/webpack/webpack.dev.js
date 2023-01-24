@@ -45,7 +45,7 @@ module.exports = {
 	resolve: {
 		extensions: [".js", ".jsx", ".ts", ".tsx"],
 		alias: {
-			"@src": path.resolve("src"),
+			"@src": path.resolve(__dirname, "../src"),
 		},
 	},
 
@@ -75,10 +75,7 @@ module.exports = {
 
 			{
 				test: /\.(sa|sc|c)ss$/,
-				use: [
-					"style-loader",
-					"css-loader",
-				],
+				use: ["style-loader", "css-loader"],
 			},
 
 			{
