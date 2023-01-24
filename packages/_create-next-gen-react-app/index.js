@@ -32,7 +32,7 @@ let package_manager;
 
 await inquirer.prompt([
 {
-  'type': 'string',
+  'type': 'input',
   'name': 'project_name',
   'message': 'Project name:',
   'default': 'react-app-next-gen'
