@@ -1,0 +1,7 @@
+{
+	"prettier": "@clearfeld/prettier-config",
+	"devDependencies": {
+		"@clearfeld/prettier-config": "^0.1.1",
+		"prettier": "^2.8.3"
+	}
+}

@@ -1,26 +1,31 @@
 {
-  "name": "create-next-gen-react-app",
-  "version": "1.0.0",
-  "description": "A create react app template focused on next generation tooling.",
-  "license": "MIT",
-  "homepage": "https://github.com/clearfeld/create-next-gen-react-app",
-  "type": "module",
-  "exports": "./index.js",
-  "scripts": {
-    "create-next-gen-react-app": "node ./index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/clearfeld/create-next-gen-react-app"
-  },
-  "keywords": [
-    "template"
-  ],
-  "dependencies": {
-    "chalk": "^5.2.0",
-    "inquirer": "^9.1.4"
-  },
-  "engines": {
-    "node": ">=16.0.0"
-  }
+	"name": "create-next-gen-react-app",
+	"version": "1.0.0",
+	"description": "A create react app template focused on next generation tooling.",
+	"license": "MIT",
+	"homepage": "https://github.com/clearfeld/create-next-gen-react-app",
+	"type": "module",
+	"exports": "./index.js",
+	"scripts": {
+		"create-next-gen-react-app": "node ./index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/clearfeld/create-next-gen-react-app"
+	},
+	"prettier": "@clearfeld/prettier-config",
+	"keywords": [
+		"template"
+	],
+	"dependencies": {
+		"chalk": "^5.2.0",
+		"inquirer": "^9.1.4"
+	},
+	"devDependencies": {
+		"@clearfeld/prettier-config": "^0.1.1",
+		"prettier": "^2.8.3"
+	},
+	"engines": {
+		"node": ">=16.0.0"
+	}
 }
