@@ -15,6 +15,18 @@ const require = createRequire(import.meta.url);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+const currentNodeVersion = process.versions.node;
+const semver = currentNodeVersion.split('.');
+const major = semver[0];
+if(major < 16) {
+  console.error(
+    `${chalk.red(`You are running Node ${currentNodeVersion}.\n`)}` +
+    `${chalk.underline("create-next-gen-react-app")} requires Node 16 or higher.\n` +
+    "Please update your version of Node."
+  );
+  process.exit(1);
+}
+
 let projectName;
 let package_manager;
 
