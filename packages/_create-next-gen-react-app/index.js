@@ -79,6 +79,7 @@ const templateDir = path.resolve(__dirname, "../create-next-gen-react-app-templa
 fs.cpSync(templateDir, projectDir, { recursive: true });
 
 fs.renameSync(path.join(projectDir, "gitignore"), path.join(projectDir, ".gitignore"));
+fs.renameSync(path.join(projectDir, "env"), path.join(projectDir, ".env"));
 
 const projectPackageJson = require(path.join(projectDir, "package.json"));
 projectPackageJson.name = projectName;
