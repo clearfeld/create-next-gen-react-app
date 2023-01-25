@@ -1,4 +1,14 @@
 {
-  "index": "Introduction",
-  "styles-and-assets": "Styles and Assets"
+  "index": {
+    "title": "Nextra",
+    "type": "page",
+    "display": "hidden",
+    "theme": {
+      "layout": "raw"
+    }
+  },
+  "docs": {
+    "title": "Documentation",
+    "type": "page"
+  }
 }
