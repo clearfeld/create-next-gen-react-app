@@ -63,6 +63,10 @@ await inquirer
 					return validation_errors;
 				}
 
+				if(fs.existsSync(answer)) {
+					return chalk.red(`Directory with that name already exists.`);
+				}
+
 				return true;
 			},
 		},
