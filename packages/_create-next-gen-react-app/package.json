@@ -19,7 +19,8 @@
 	],
 	"dependencies": {
 		"chalk": "^5.2.0",
-		"inquirer": "^9.1.4"
+		"inquirer": "^9.1.4",
+		"validate-npm-package-name": "^5.0.0"
 	},
 	"devDependencies": {
 		"@clearfeld/prettier-config": "^0.1.1",

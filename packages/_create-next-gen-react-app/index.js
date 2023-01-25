@@ -10,6 +10,7 @@ import { createRequire } from "node:module";
 
 import inquirer from "inquirer";
 import chalk from "chalk";
+import validate from "validate-npm-package-name";
 
 const require = createRequire(import.meta.url);
 const __filename = fileURLToPath(import.meta.url);
@@ -37,6 +38,33 @@ await inquirer
 			name: "project_name",
 			message: "Project name:",
 			default: "react-app-next-gen",
+			validate: async (answer) => {
+				if (answer === "\\" || answer === "") {
+					return chalk.red(
+						`Project name can't be ${chalk.underline("empty")} or ${chalk.underline(
+							"\\",
+						)}.`,
+					);
+				}
+
+				const pnv = validate(answer);
+				if (!pnv.validForNewPackages) {
+					let validation_errors = "";
+					if (pnv?.errors) {
+						for (const error of pnv.errors) {
+							validation_errors += error;
+						}
+					}
+					if (pnv?.warnings) {
+						for (const warning of pnv.warnings) {
+							validation_errors += warning;
+						}
+					}
+					return validation_errors;
+				}
+
+				return true;
+			},
 		},
 		{
 			type: "list",
@@ -46,18 +74,6 @@ await inquirer
 		},
 	])
 	.then((answer) => {
-		if (answer.project_name === "\\" || answer.project_name === "") {
-			console.log(
-				chalk.red(
-					`Project name can't be ${chalk.underline("empty")} or ${chalk.underline(
-						"\\",
-					)}.`,
-				),
-			);
-			projectName = undefined;
-			process.exit(1);
-		}
-
 		projectName = answer.project_name;
 		package_manager = answer.package_manager;
 	})
