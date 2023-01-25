@@ -6,6 +6,10 @@ const config: DocsThemeConfig = {
   project: {
     link: 'https://github.com/clearfeld/create-next-gen-react-app',
   },
+  editLink: {
+    text: "Edit this page on GitHub",
+  },
+  docsRepositoryBase: "https://github.com/clearfeld/create-next-gen-react-app/tree/main/docs",
   // chat: {
   //   link: 'https://discord.com',
   // },
