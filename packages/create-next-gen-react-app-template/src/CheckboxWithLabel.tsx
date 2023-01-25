@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 
-export default function CheckboxWithLabel({ labelOn, labelOff }) {
+interface CheckboxWithLabelProps {
+	on: string;
+	off: string;
+}
+
+function CheckboxWithLabel(props: CheckboxWithLabelProps) {
 	const [isChecked, setIsChecked] = useState(false);
 
 	const onChange = () => {
@@ -14,7 +19,9 @@ export default function CheckboxWithLabel({ labelOn, labelOff }) {
 				checked={isChecked}
 				onChange={onChange}
 			/>
-			{isChecked ? labelOn : labelOff}
+			{isChecked ? props.on : props.off}
 		</label>
 	);
 }
+
+export default CheckboxWithLabel;

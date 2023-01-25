@@ -7,8 +7,8 @@ describe("CheckboxWithLabel", () => {
 	it("Change text after click", () => {
 		const { queryByLabelText, getByLabelText } = render(
 			<CheckboxWithLabel
-				labelOn={"On"}
-				labelOff={"Off"}
+				on={"On"}
+				off={"Off"}
 			/>,
 		);
 
