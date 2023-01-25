@@ -30,6 +30,7 @@ if (major < 16) {
 
 let projectName;
 let package_manager;
+let init_git_repo;
 
 await inquirer
 	.prompt([
@@ -63,23 +64,31 @@ await inquirer
 					return validation_errors;
 				}
 
-				if(fs.existsSync(answer)) {
+				if (fs.existsSync(answer)) {
 					return chalk.red(`Directory with that name already exists.`);
 				}
 
 				return true;
 			},
 		},
+
 		{
 			type: "list",
 			name: "package_manager",
 			message: "Package manager:",
 			choices: ["npm", "pnpm"],
 		},
+
+		{
+			type: "confirm",
+			name: "init_git",
+			message: "Initialize repo with git:",
+		},
 	])
 	.then((answer) => {
 		projectName = answer.project_name;
 		package_manager = answer.package_manager;
+		init_git_repo = answer.init_git;
 	})
 	.catch((error) => {
 		if (error.isTtyError) {
@@ -116,6 +125,8 @@ if (package_manager === "npm") {
 	cmd = "pnpm install";
 }
 
+console.log("Installing packages, please wait this might take a few minutes.");
+
 exec(
 	cmd,
 	{
@@ -129,6 +140,22 @@ exec(
 		console.log(stdout);
 	},
 );
+
+if (init_git_repo) {
+	exec(
+		`git init && git add * && git commit -m "Init: ${projectName}" && git branch -M main`,
+		{
+			cwd: projectDir,
+		},
+		(err, stdout, stderr) => {
+			if (err) {
+				console.error(err);
+				return;
+			}
+			console.log(stdout);
+		},
+	);
+}
 
 console.log("Success! Your new project is ready.");
 console.log(`Created ${projectName} at ${projectDir}`);
