@@ -33,7 +33,7 @@ import styles from "./index.module.css";
         margin: "16px 0"
     }}> Set up a modern web app by running one command.</p>
     <p className="subtitle">
-      <Link className={styles.cta} href="/docs">Get started <span>→</span></Link>
+      <Link className={styles.cta} href="/docs/getting-started">Get started <span>→</span></Link>
     </p>
 
   </div>
@@ -126,15 +126,11 @@ import styles from "./index.module.css";
 	}
 	:global(#highlighting-card) {
 		min-height: 300px;
-		background-image: linear-gradient(to top, transparent, #fff 50%),
-			url(/assets/syntax-highlighting.svg);
 		background-size: 634px;
 		background-position: -6px calc(100% + 4px);
 		background-repeat: no-repeat;
 	}
 	:global(.dark #highlighting-card) {
-		background-image: linear-gradient(to top, transparent, #202020 50%),
-			url(/assets/syntax-highlighting.svg);
 	}
 	:global(.feat-darkmode) {
 		min-height: 300px;
