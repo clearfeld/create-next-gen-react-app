@@ -17,8 +17,8 @@ function App() {
 
 			<div>
 				<CheckboxWithLabel
-					labelOff={"Off"}
-					labelOn={"On"}
+					off={"Off"}
+					on={"On"}
 				/>
 
 				<p>Edit src\App.tsx and save to reload.</p>
