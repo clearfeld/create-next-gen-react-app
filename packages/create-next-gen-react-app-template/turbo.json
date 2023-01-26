@@ -1,0 +1,19 @@
+{
+    "$schema": "https://turbo.build/schema.json",
+    // https://turbo.build/repo/docs/core-concepts/caching#altering-caching-based-on-environment-variables
+    // "globalDependencies": [".env"],
+    "pipeline": {
+      "build": {
+        "outputs": ["dist/**"]
+      },
+      "start": {
+        "cache": false,
+        "persistent": true
+      },
+      "test": {},
+      "test:watch": {
+        "cache": false
+      },
+      "lint": {}
+    }
+  }
