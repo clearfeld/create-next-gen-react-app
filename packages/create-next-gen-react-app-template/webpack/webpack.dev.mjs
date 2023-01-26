@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import Dotenv from "dotenv-webpack";
+import HtmlWebpackPlugin  from "html-webpack-plugin";
 
 import webpack from "webpack";
 
@@ -18,10 +19,18 @@ const Config = {
 	entry: "../src/index.tsx",
 	context: __dirname,
 
+	plugins: [
+		new ReactRefreshWebpackPlugin(),
+		new Dotenv(),
+		new HtmlWebpackPlugin({
+			template: path.resolve(__dirname, "../public/index.html"),
+		})
+	],
+
 	output: {
 		path: path.resolve(__dirname, "../dist"),
-		filename: "template.bundle.js",
-		chunkFilename: "[name].bundle.js",
+		filename: "[name].bundle.js",
+		// chunkFilename: "[name].bundle.js",
 	},
 
 	devServer: {
@@ -45,8 +54,6 @@ const Config = {
 			},
 		},
 	},
-
-	plugins: [new ReactRefreshWebpackPlugin(), new Dotenv()],
 
 	resolve: {
 		extensions: [".js", ".jsx", ".ts", ".tsx"],
