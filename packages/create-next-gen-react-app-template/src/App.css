@@ -40,3 +40,12 @@ html, body {
         transform: rotate(360deg);
     }
 }
+
+.route-block {
+    background: #1b1c1e;
+    border-radius: 4px;
+    padding: 16px;
+    height: 180px;
+    display: grid;
+    align-content: center;
+}

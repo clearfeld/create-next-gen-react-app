@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import Dotenv from "dotenv-webpack";
-import HtmlWebpackPlugin  from "html-webpack-plugin";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
 import webpack from "webpack";
 
@@ -24,12 +24,13 @@ const Config = {
 		new Dotenv(),
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, "../public/index.html"),
-		})
+		}),
 	],
 
 	output: {
 		path: path.resolve(__dirname, "../dist"),
 		filename: "[name].bundle.js",
+		publicPath: "/",
 		// chunkFilename: "[name].bundle.js",
 	},
 
@@ -37,6 +38,7 @@ const Config = {
 		port: env.PORT ? env.PORT : "auto", // TODO: add env variable for port
 		hot: true,
 		compress: true,
+		historyApiFallback: true,
 
 		static: [
 			{

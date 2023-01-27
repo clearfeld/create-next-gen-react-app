@@ -39,6 +39,7 @@ const Config = {
 		filename: projectPackageJson.name + ".[name].[chunkhash].bundle.js",
 		chunkFilename: projectPackageJson.name + ".[name].[chunkhash].bundle.js",
 		clean: true,
+		publicPath: "/",
 	},
 
 	optimization: {
