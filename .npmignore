@@ -1,3 +1,4 @@
 **/node_modules
+/docs
 
 /packages/create-next-gen-react-app-template/dist

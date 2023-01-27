@@ -1,7 +1,33 @@
 {
+	"name": "create-next-gen-react-app",
+	"version": "0.1.2",
+	"homepage": "https://github.com/clearfeld/create-next-gen-react-app#create-next-gen-react-app",
+	"keywords": [
+		"react",
+		"template"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/clearfeld/create-next-gen-react-app.git",
+		"directory": "packages/_create-next-gen-react-app"
+	},
 	"prettier": "@clearfeld/prettier-config",
+	"bin": {
+		"create-next-gen-react-app": "./packages/_create-next-gen-react-app/index.js"
+	},
+	"scripts": {
+		"create-next-gen-react-app": "node packages/_create-next-gen-react-app/index.js"
+	},
+	"dependencies": {
+		"chalk": "^5.2.0",
+		"inquirer": "^9.1.4",
+		"validate-npm-package-name": "^5.0.0"
+	},
 	"devDependencies": {
 		"@clearfeld/prettier-config": "^0.1.1",
 		"prettier": "^2.8.3"
+	},
+	"engines": {
+		"node": ">=16.0.0"
 	}
 }
