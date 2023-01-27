@@ -61,6 +61,7 @@ const Config = {
 		extensions: [".js", ".jsx", ".ts", ".tsx"],
 		alias: {
 			"@src": path.resolve(__dirname, "../src"),
+			"@store": path.resolve(__dirname, "../src/store"),
 		},
 	},
 

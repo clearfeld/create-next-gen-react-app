@@ -11,10 +11,20 @@ import {
 	Outlet,
 } from "react-router-dom";
 
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import {
+	T_CountStateData,
+	T_SetCountStateData,
+	CountStateData
+} from "@store/CountAtom";
+
 import Logo from "./logo.svg";
 import CheckboxWithLabel from "./CheckboxWithLabel";
 
 function App() {
+	const getCountState: T_CountStateData = useRecoilValue(CountStateData);
+	const setCountState: T_SetCountStateData = useSetRecoilState(CountStateData);
+
 	const router = createBrowserRouter(
 		createRoutesFromElements(
 			<Route
@@ -24,11 +34,15 @@ function App() {
 						<div
 							style={{
 								display: "grid",
-								gridTemplateColumns: "1fr 1fr"
+								gridTemplateColumns: "1fr 1fr 1fr"
 							}}
 						>
 							<Link to={"/"}>
 								<div className="link">Home</div>
+							</Link>
+
+							<Link to={"/global"}>
+								<div className="link">Global State</div>
 							</Link>
 
 							<Link to={"/links"}>
@@ -58,6 +72,27 @@ function App() {
 							>
 								Learn React
 							</a>
+						</div>
+					}
+				/>
+
+				<Route
+					path="Global"
+					element={
+						<div className="route-block">
+							<button
+								onClick={() => {
+									const newState: T_CountStateData = {
+										value: getCountState.value + 1
+									};
+
+									setCountState(newState);
+								}}
+							>
+								increment
+							</button>
+
+							<p>Count: {getCountState.value}</p>
 						</div>
 					}
 				/>
