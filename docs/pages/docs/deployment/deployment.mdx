@@ -1,0 +1,51 @@
+# Deployment
+
+import { Tab, Tabs } from 'nextra-theme-docs'
+
+<Tabs items={['npm', 'pnpm']}>
+  <Tab>
+    ```bash copy
+    npm run build
+    ````
+  </Tab>
+  <Tab>
+    ````bash copy
+    pnpm build
+    ````
+  </Tab>
+</Tabs>
+
+Creates a `dist` directory with a production build of your app. Set up your favorite HTTP server so that a visitor to your site is served `index.html`, `[name].bundle.css`, and the various `[name].bundle.js` files.
+
+## Static server
+
+The easiest way to test and handle this would be to install [serve](https://www.npmjs.com/package/serve) and let it handle the rest:
+
+<Tabs items={['npm', 'pnpm']}>
+  <Tab>
+    ```bash copy
+    npm i -g serve
+    serve -s dist
+    ````
+  </Tab>
+  <Tab>
+    ````bash copy
+    pnpm add -g serve
+    serve -s dist
+    ````
+  </Tab>
+</Tabs>
+
+The last command shown above will serve your static site on  http://localhost:3000. Like many of serve’s internal settings, the port can be adjusted using the `-l` or `--listen` flags:
+
+```bash copy
+serve -s build -l 4000
+```
+
+Run this command to get a full list of the options available:
+
+```bash copy
+serve -h
+```
+
+{/* TODO: section on [env-cmd](https://www.npmjs.com/package/env-cmd) */}

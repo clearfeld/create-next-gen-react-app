@@ -1,0 +1,91 @@
+# Getting Started
+
+import { Tab, Tabs } from 'nextra-theme-docs'
+
+## Qiuck Start
+
+```bash
+npx create-next-gen-react-app@latest
+cd <app-name>
+
+npm run start
+# or depending on choice
+pnpm run start
+```
+
+> Browser will automatically open
+
+## Get Started Immediately
+
+Various common tools are preconfigured (ex. webpack, swc, jest, typescript, prettier), so you can focus on creating your project and immediately working on it.
+
+## Creating an App
+
+You'll need to have Node >= 16 on your local development machine (but it’s not required on the server).
+
+### npx
+
+```bash
+npx create-next-gen-react-app@latest
+```
+
+## Scripts
+
+Inside the newly created project, you can run some built-in commands:
+
+### `start`
+
+<Tabs items={['npm', 'pnpm']}>
+  <Tab>
+    ```bash copy
+    npm run start
+    ````
+  </Tab>
+  <Tab>
+    ````bash copy
+    pnpm start
+    ````
+  </Tab>
+</Tabs>
+
+Runs the app in development mode. The browser will automatically be opened on localhost.
+
+The page will automatically reload if you make changes to the code.
+
+### `test`
+
+<Tabs items={['npm', 'pnpm']}>
+  <Tab>
+    ```bash copy
+    npm run test
+    ````
+  </Tab>
+  <Tab>
+    ````bash copy
+    pnpm test
+    ````
+  </Tab>
+</Tabs>
+
+By default runs all tests.
+
+### `build`
+
+<Tabs items={['npm', 'pnpm']}>
+  <Tab>
+    ```bash copy
+    npm run build
+    ````
+  </Tab>
+  <Tab>
+    ````bash copy
+    pnpm build
+    ````
+  </Tab>
+</Tabs>
+
+Builds the app for production to the `dist` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.
+
+Your app is ready to be deployed. check the [deployment](/docs/deployment/deployment) section on how to test and next steps.
