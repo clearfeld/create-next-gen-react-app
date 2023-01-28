@@ -8,6 +8,7 @@ import Dotenv from "dotenv-webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
+import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
 import webpack from "webpack";
 
@@ -31,6 +32,16 @@ const Config = {
 		new MiniCssExtractPlugin({
 			filename: projectPackageJson.name + ".[name].[chunkhash].css",
 			// TODO: chunkFilename: projectPackageJson.name + "[name].[id].[chunkhash]css",
+		}),
+		new ForkTsCheckerWebpackPlugin({
+			typescript: {
+				configFile: "../tsconfig.json",
+				diagnosticOptions: {
+					semantic: true,
+					syntactic: true,
+				},
+				mode: "write-references",
+			},
 		}),
 	],
 

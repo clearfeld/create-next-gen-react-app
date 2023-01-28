@@ -7,6 +7,7 @@ import { fileURLToPath } from "node:url";
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import Dotenv from "dotenv-webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
 import webpack from "webpack";
 
@@ -25,6 +26,16 @@ const Config = {
 		new Dotenv(),
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, "../public/index.html"),
+		}),
+		new ForkTsCheckerWebpackPlugin({
+			typescript: {
+				configFile: "../tsconfig.json",
+				diagnosticOptions: {
+					semantic: true,
+					syntactic: true,
+				},
+				mode: "write-references",
+			},
 		}),
 	],
 

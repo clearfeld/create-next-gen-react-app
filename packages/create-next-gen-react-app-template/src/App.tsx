@@ -18,7 +18,7 @@ import {
 	CountStateData
 } from "@store/CountAtom";
 
-import Logo from "./logo.svg";
+import LogoSVG from "./logo.svg";
 import CheckboxWithLabel from "./CheckboxWithLabel";
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
 						<div
 							style={{
 								display: "grid",
-								gridTemplateColumns: "1fr 1fr 1fr"
+								gridTemplateColumns: "1fr 1fr 1fr",
 							}}
 						>
 							<Link to={"/"}>
@@ -83,7 +83,7 @@ function App() {
 							<button
 								onClick={() => {
 									const newState: T_CountStateData = {
-										value: getCountState.value + 1
+										value: getCountState.value + 1,
 									};
 
 									setCountState(newState);
@@ -127,11 +127,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<Logo
-				className="logo"
-				title="logo"
-				alt="logo"
-			/>
+			<LogoSVG className="logo" />
 
 			<h1 className="title">React</h1>
 
