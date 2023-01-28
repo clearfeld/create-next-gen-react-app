@@ -7,6 +7,8 @@
 		"start-turbo": "dotenv -- turbo run start",
 		"test": "jest",
 		"test-turbo": "dotenv -- turbo run test",
+		"lint": "tsc -p ./tsconfig.json",
+		"lint-turbo": "turbo run lint",
 		"build": "webpack --config ./webpack/webpack.prod.mjs",
 		"build-turbo": "turbo run build"
 	},
@@ -41,6 +43,7 @@
 		"jest-watch-typeahead": "^2.2.2",
 		"mini-css-extract-plugin": "^2.7.2",
 		"prettier": "^2.8.3",
+		"react-error-overlay": "^6.0.11",
 		"react-refresh": "^0.14.0",
 		"style-loader": "^3.3.1",
 		"swc-loader": "^0.2.3",

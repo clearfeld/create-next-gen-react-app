@@ -16,6 +16,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const Config = {
 	mode: "development",
+	devtool: "source-map",
 	entry: "../src/index.tsx",
 	context: __dirname,
 
