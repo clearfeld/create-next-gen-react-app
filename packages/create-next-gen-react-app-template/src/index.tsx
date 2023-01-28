@@ -7,8 +7,9 @@ import reportWebVitals from "./reportWebVitals";
 
 import { RecoilRoot } from "recoil";
 
-const container = document.getElementById("app");
-const root = createRoot(container!);
+const root = createRoot(
+	document.getElementById('app') as HTMLElement
+);
 
 root.render(
 	<React.StrictMode>
