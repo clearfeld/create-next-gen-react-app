@@ -12,11 +12,7 @@ import {
 } from "react-router-dom";
 
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import {
-	T_CountStateData,
-	T_SetCountStateData,
-	CountStateData
-} from "@store/CountAtom";
+import { T_CountStateData, T_SetCountStateData, CountStateData } from "@store/CountAtom";
 
 import LogoSVG from "./logo.svg";
 import CheckboxWithLabel from "./CheckboxWithLabel";
@@ -58,10 +54,7 @@ function App() {
 					index
 					element={
 						<div className="route-block">
-							<CheckboxWithLabel
-								off={"Off"}
-								on={"On"}
-							/>
+							<CheckboxWithLabel off={"Off"} on={"On"} />
 
 							<p>Edit src\App.tsx and save to reload.</p>
 							<a

@@ -14,11 +14,7 @@ function CheckboxWithLabel(props: CheckboxWithLabelProps) {
 
 	return (
 		<label>
-			<input
-				type="checkbox"
-				checked={isChecked}
-				onChange={onChange}
-			/>
+			<input type="checkbox" checked={isChecked} onChange={onChange} />
 			{isChecked ? props.on : props.off}
 		</label>
 	);

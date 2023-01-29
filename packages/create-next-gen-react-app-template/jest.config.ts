@@ -187,10 +187,7 @@ export default {
 	// An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
 	// watchPathIgnorePatterns: [],
 
-  watchPlugins: [
-    'jest-watch-typeahead/filename',
-    'jest-watch-typeahead/testname',
-  ],
+	watchPlugins: ["jest-watch-typeahead/filename", "jest-watch-typeahead/testname"],
 
 	// Whether to use watchman for file crawling
 	// watchman: true,
