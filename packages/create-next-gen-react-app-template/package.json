@@ -4,15 +4,18 @@
 	"type": "module",
 	"scripts": {
 		"start": "webpack-dev-server --config ./webpack/webpack.dev.mjs",
-		"start-turbo": "dotenv -- turbo run start",
 		"test": "jest",
-		"test-turbo": "dotenv -- turbo run test",
 		"lint": "tsc -p ./tsconfig.json",
-		"lint-turbo": "turbo run lint",
 		"format": "rome format .",
 		"format:fix": "rome format . --write",
 		"build": "webpack --config ./webpack/webpack.prod.mjs",
-		"build-turbo": "turbo run build"
+		"_TURBO_Commands": "",
+		"t:start": "dotenv -- turbo run start",
+		"t:test": "dotenv -- turbo run test",
+		"t:lint": "turbo run lint",
+		"t:format": "turbo run format",
+		"t:format:fix": "turbo run format:fix",
+		"t:build": "turbo run build"
 	},
 	"dependencies": {
 		"react": "^18.2.0",
