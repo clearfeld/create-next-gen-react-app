@@ -56,6 +56,16 @@ const Config = {
 			{
 				publicPath: env.PUBLIC_URL ? `${env.PUBLIC_URL}` : "/",
 			},
+
+			// https://webpack.js.org/configuration/dev-server/#devserverwatchfiles
+			// {
+			// 	watch: {
+			// 		ignored: [
+			// 			// path.resolve(__dirname, "../dist"),
+			// 			path.resolve(__dirname, "../node_modules"),
+			// 		],
+			// 	},
+			// },
 		],
 
 		open: [env.PUBLIC_URL ? `${env.PUBLIC_URL}` : "/"],
