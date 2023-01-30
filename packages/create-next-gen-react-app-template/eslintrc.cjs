@@ -15,6 +15,7 @@ module.exports = {
 		"**/.git/**",
 		"**/.turbo/**",
 		"stylelint.config.cjs",
+		"postcss.config.cjs",
 		".eslintrc.cjs",
 	],
 
