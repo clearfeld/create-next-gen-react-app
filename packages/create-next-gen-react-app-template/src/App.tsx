@@ -12,7 +12,11 @@ import {
 } from "react-router-dom";
 
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { T_CountStateData, T_SetCountStateData, CountStateData } from "@store/CountAtom";
+import {
+	T_CountStateData,
+	T_SetCountStateData,
+	CountStateData,
+} from "@store/CountAtom";
 
 import LogoSVG from "./logo.svg";
 import CheckboxWithLabel from "./CheckboxWithLabel";
