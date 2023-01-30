@@ -103,7 +103,7 @@ const Config = {
 
 			{
 				test: /\.(sa|sc|c)ss$/,
-				use: ["style-loader", "css-loader"],
+				use: ["style-loader", "css-loader", "postcss-loader"],
 			},
 
 			{

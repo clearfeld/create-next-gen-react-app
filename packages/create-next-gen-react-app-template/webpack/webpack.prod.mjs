@@ -120,7 +120,7 @@ const Config = {
 				test: /\.(sa|sc|c)ss$/,
 				include: path.join(__dirname, "../src"),
 				exclude: /(node_modules|bower_components)/,
-				use: [MiniCssExtractPlugin.loader, "css-loader"],
+				use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
 			},
 
 			{
