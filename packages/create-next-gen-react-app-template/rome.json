@@ -13,5 +13,8 @@
 		"indentSize": 4,
 		"indentStyle": "tab",
 		"lineWidth": 100
+	},
+	"linter": {
+		"enabled": false
 	}
 }
