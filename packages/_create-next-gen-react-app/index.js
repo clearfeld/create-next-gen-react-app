@@ -31,6 +31,7 @@ if (major < 16) {
 let projectName;
 let package_manager;
 let init_git_repo;
+let bundler;
 
 await inquirer
 	.prompt([
@@ -80,6 +81,13 @@ await inquirer
 		},
 
 		{
+			type: "list",
+			name: "bundler",
+			message: "Bundler:",
+			choices: ["vite", "webpack", "experimental"],
+		},
+
+		{
 			type: "confirm",
 			name: "init_git",
 			message: "Initialize repo with git:",
@@ -88,6 +96,7 @@ await inquirer
 	.then((answer) => {
 		projectName = answer.project_name;
 		package_manager = answer.package_manager;
+		bundler = answer.bundler;
 		init_git_repo = answer.init_git;
 	})
 	.catch((error) => {
@@ -104,8 +113,22 @@ const currentDir = process.cwd();
 const projectDir = path.resolve(currentDir, projectName);
 fs.mkdirSync(projectDir, { recursive: true });
 
-const templateDir = path.resolve(__dirname, "../create-next-gen-react-app-template");
-fs.cpSync(templateDir, projectDir, { recursive: true });
+if (bundler === "webpack") {
+	const templateDir = path.resolve(
+		__dirname,
+		"../create-next-gen-react-app-template-webpack",
+	);
+	fs.cpSync(templateDir, projectDir, { recursive: true });
+} else if (bundler === "vite") {
+	const templateDir = path.resolve(__dirname, "../create-next-gen-react-app-template-vite");
+	fs.cpSync(templateDir, projectDir, { recursive: true });
+} else if (bundler === "experimental") {
+	const templateDir = path.resolve(
+		__dirname,
+		"../create-next-gen-react-app-template-experimental",
+	);
+	fs.cpSync(templateDir, projectDir, { recursive: true });
+}
 
 fs.renameSync(path.join(projectDir, "gitignore"), path.join(projectDir, ".gitignore"));
 fs.renameSync(path.join(projectDir, "env"), path.join(projectDir, ".env"));

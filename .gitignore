@@ -1,11 +1,16 @@
 **/node_modules
 
-/packages/create-next-gen-react-app-template/dist
-/packages/create-next-gen-react-app-template/pnpm-lock.yaml
-/packages/create-next-gen-react-app-template/package-lock.json
-/packages/create-next-gen-react-app-template/.turbo
+/packages/create-next-gen-react-app-template-webpack/dist
+/packages/create-next-gen-react-app-template-webpack/pnpm-lock.yaml
+/packages/create-next-gen-react-app-template-webpack/package-lock.json
+/packages/create-next-gen-react-app-template-webpack/.turbo
 
 /packages/create-next-gen-react-app-template-vite/dist
 /packages/create-next-gen-react-app-template-vite/pnpm-lock.yaml
 /packages/create-next-gen-react-app-template-vite/package-lock.json
 /packages/create-next-gen-react-app-template-vite/.turbo
+
+/packages/create-next-gen-react-app-template-experimental/dist
+/packages/create-next-gen-react-app-template-experimental/pnpm-lock.yaml
+/packages/create-next-gen-react-app-template-experimental/package-lock.json
+/packages/create-next-gen-react-app-template-experimental/.turbo
