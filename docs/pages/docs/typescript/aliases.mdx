@@ -1,0 +1,116 @@
+# Import Aliases
+
+By default all templates will have 2 import aliases pre-setup to use.
+
+`@src` - root directory for all none test source code.
+
+`@store` - sub directory in root that contains all global state atoms (recoil).
+
+## Adding new import aliases
+
+To add a new import alias you'll need to modify the following files:
+
+### TsConfig
+
+```json filename="tsconfig.json" {5-13}
+//...
+"compilerOptions": {
+        // ...
+
+		"paths": {
+			"@src/*": ["./src/*"],
+			"@store/*": ["./src/store/*"]
+
+            //
+            // new alias goes here
+            //
+
+		}, /* Specify a set of entries that re-map imports to additional lookup locations. */
+
+        // ...
+}
+//...
+```
+
+### Jest
+
+```typescript filename="jest.config.ts" {3-9}
+//...
+
+	moduleNameMapper: {
+		"^@src(.*)$": "<rootDir>/src$1",
+
+        //
+        // new alias goes here
+        //
+	},
+
+//...
+```
+
+### Vite Config
+
+NOTE: Only needed if you choose a template with a vite bundler.
+
+```javascript filename="vite.config.js" {6-13}
+//...
+defineConfig({
+	//...
+
+	resolve: {
+		alias: {
+			"@src": path.resolve(__dirname, "src"),
+			"@store": path.resolve(__dirname, "src/store"),
+
+			//
+			// new alias goes here
+			//
+		},
+	},
+
+	//...
+});
+//...
+```
+
+### Webpack files
+
+NOTE: Only needed if you choose a template with a webpack bundler.
+
+You'll need to make this change to both the dev and prod webpack files.
+
+```typescript filename="webpack/webpack.dev.mjs" {5-12}
+//...
+
+	resolve: {
+		extensions: [".js", ".jsx", ".ts", ".tsx"],
+		alias: {
+			"@src": path.resolve(__dirname, "../src"),
+			"@store": path.resolve(__dirname, "../src/store"),
+
+            //
+            // new alias goes here
+            //
+		},
+	},
+
+//...
+```
+
+```typescript filename="webpack/webpack.prod.mjs" {5-12}
+//...
+
+	resolve: {
+		extensions: [".js", ".jsx", ".ts", ".tsx"],
+		alias: {
+			"@src": path.resolve(__dirname, "../src"),
+			"@store": path.resolve(__dirname, "../src/store"),
+
+            //
+            // new alias goes here
+            //
+		},
+	},
+
+//...
+```
