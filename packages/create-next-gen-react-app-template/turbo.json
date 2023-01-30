@@ -8,15 +8,18 @@
 			"persistent": true
 		},
 
-    "test": {},
+		"test": {},
 		"test:watch": {
 			"cache": false
 		},
 
-    "lint:tsc": {},
+		"lint:tsc": {},
 		"lint:eslint": {},
+		"lint:css": {},
+		"lint:css:fix": {},
 
-		"format:": {},
+		"format": {},
+		"format:fix": {},
 
 		"build": {
 			"outputs": ["dist/**"]

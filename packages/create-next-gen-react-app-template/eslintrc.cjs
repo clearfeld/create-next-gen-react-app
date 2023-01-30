@@ -14,6 +14,7 @@ module.exports = {
 		"**/dist/**",
 		"**/.git/**",
 		"**/.turbo/**",
+		"stylelint.config.cjs",
 		".eslintrc.cjs",
 	],
 
