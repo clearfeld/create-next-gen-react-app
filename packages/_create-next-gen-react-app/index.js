@@ -66,7 +66,7 @@ await inquirer
 				}
 
 				if (fs.existsSync(answer)) {
-					return chalk.red(`Directory with that name already exists.`);
+					return chalk.red("Directory with that name already exists.");
 				}
 
 				return true;
@@ -83,7 +83,7 @@ await inquirer
 		{
 			type: "list",
 			name: "bundler",
-			message: "Bundler:",
+			message: "Template:",
 			choices: ["vite", "webpack", "experimental"],
 		},
 
@@ -101,9 +101,9 @@ await inquirer
 	})
 	.catch((error) => {
 		if (error.isTtyError) {
-			console.log(chalk.red(`Prompt couldn't be rendered in the current environment`));
+			console.log(chalk.red("Prompt couldn't be rendered in the current environment"));
 		} else {
-			console.log(chalk.red(`Error failed to get answer - `, error));
+			console.log(chalk.red("Error failed to get answer - ", error));
 		}
 
 		process.exit(1);

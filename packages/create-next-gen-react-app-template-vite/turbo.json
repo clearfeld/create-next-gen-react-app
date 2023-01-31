@@ -21,6 +21,9 @@
 		"format": {},
 		"format:fix": {},
 
+		"preview": {
+			"outputs": ["dist/**"]
+		},
 		"build": {
 			"outputs": ["dist/**"]
 		}
