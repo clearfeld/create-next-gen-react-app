@@ -61,20 +61,73 @@ The page will reload if you make edits.
 
 Launches the test runner in the interactive watch mode. See the section about running tests for more information.
 
-### `lint`
+### `lint:tsc`
 
 <Tabs items={['npm', 'pnpm']}>
   <Tab>
     ```bash copy
-    npm run lint
+    npm run lint:tsc
     ````
   </Tab>
   <Tab>
     ````bash copy
-    pnpm lint
+    pnpm lint:tsc
     ````
   </Tab>
 </Tabs>
+
+Runs tsc, and checks for and prints all typescript errors and warnings.
+
+### `lint:eslint`
+
+<Tabs items={['npm', 'pnpm']}>
+  <Tab>
+    ```bash copy
+    npm run lint:eslint
+    ````
+  </Tab>
+  <Tab>
+    ````bash copy
+    pnpm lint:eslint
+    ````
+  </Tab>
+</Tabs>
+
+Runs eslint, prints all errors and warnings.
+
+### `lint:css`
+
+<Tabs items={['npm', 'pnpm']}>
+  <Tab>
+    ```bash copy
+    npm run lint:css
+    ````
+  </Tab>
+  <Tab>
+    ````bash copy
+    pnpm lint:css
+    ````
+  </Tab>
+</Tabs>
+
+Runs stylelint against all css files, and prints all errors and warnings.
+
+### `lint:css:fix`
+
+<Tabs items={['npm', 'pnpm']}>
+  <Tab>
+    ```bash copy
+    npm run lint:css:fix
+    ````
+  </Tab>
+  <Tab>
+    ````bash copy
+    pnpm lint:css:fix
+    ````
+  </Tab>
+</Tabs>
+
+Runs stylelint against all css files, and fixes all auto fixable problems and formats.
 
 ### `format`
 
