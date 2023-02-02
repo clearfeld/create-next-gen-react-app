@@ -4,18 +4,18 @@ import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 // import fs from "node:fs";
 
+const require = createRequire(import.meta.url);
+// const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const projectPackageJson = require(path.resolve(__dirname, "../package.json"));
+
+import webpack from "webpack";
 import Dotenv from "dotenv-webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
-
-import webpack from "webpack";
-
-const require = createRequire(import.meta.url);
-// const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const projectPackageJson = require(path.resolve(__dirname, "../package.json"));
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin
 
 const Config = {
 	mode: "production",
@@ -43,6 +43,8 @@ const Config = {
 				mode: "write-references",
 			},
 		}),
+
+		// new BundleAnalyzerPlugin(),
 	],
 
 	output: {
