@@ -118,9 +118,9 @@ export default defineConfig(({ command, mode }) => {
 				}),
 
 				// NOTE: must be the last plugin
-				// visualizer(
-				// 	open: true,
-				// ),
+				// visualizer({
+				// 	open: true
+				// }),
 			],
 
 			resolve: {

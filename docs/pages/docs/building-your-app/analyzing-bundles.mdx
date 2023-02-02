@@ -1,0 +1,89 @@
+# Analyzing the bundle(s) size
+
+All templates come with a bundle analyzer, to start analyzing the build output follow the steps for your specific template.
+
+import { Tab, Tabs } from 'nextra-theme-docs'
+
+## Vite
+
+Uncomment the following lines in `vite.config.js`.
+
+```javascript filename="vite.config.js" {7-9}
+/// ...
+		return defineConfig({
+            /// ...
+            plugins: [
+                /// ...
+
+				// visualizer({
+				// 	open: true,
+				// }),
+            ],
+/// ...
+```
+
+Now when you run `build`
+
+<Tabs items={['npm', 'pnpm']}>
+  <Tab>
+    ```bash copy
+    npm run build
+    ````
+  </Tab>
+  <Tab>
+    ````bash copy
+    pnpm build
+    ````
+  </Tab>
+</Tabs>
+
+Your browser will automatically open the analyzer stats like below:
+
+<br/>
+
+<img
+	src="/assets/rollup_bundle_analyzer.png"
+	alt="vite - rollup bundle analyze"
+/>
+
+## Webpack
+
+Uncomment the following line in `webpack.prod.mjs`.
+
+```javascript filename="webpack/webpack.prod.mjs" {8}
+/// ...
+const Config = {
+	/// ...
+
+	plugins: [
+        /// ...
+
+		// new BundleAnalyzerPlugin(),
+	],
+/// ...
+```
+
+Now when you run `build`
+
+<Tabs items={['npm', 'pnpm']}>
+  <Tab>
+    ```bash copy
+    npm run build
+    ````
+  </Tab>
+  <Tab>
+    ````bash copy
+    pnpm build
+    ````
+  </Tab>
+</Tabs>
+
+Your browser will automatically open the analyzer stats like below:
+
+<br/>
+
+<img
+	src="/assets/webpack_bundle_analyzer.png"
+	alt="webpack bundle analyze"
+/>
+
