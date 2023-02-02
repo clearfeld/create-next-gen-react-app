@@ -6,6 +6,7 @@ import react from "@vitejs/plugin-react-swc";
 import svgr from "vite-plugin-svgr";
 import checker from "vite-plugin-checker";
 import eslint from "vite-plugin-eslint";
+import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig(({ command, mode }) => {
 	// Loads our env file and merges it with Node's process.env
@@ -115,6 +116,11 @@ export default defineConfig(({ command, mode }) => {
 				eslint({
 					overrideConfigFile: path.resolve(__dirname, ".eslintrc.cjs"),
 				}),
+
+				// NOTE: must be the last plugin
+				// visualizer(
+				// 	open: true,
+				// ),
 			],
 
 			resolve: {

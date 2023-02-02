@@ -64,6 +64,7 @@
 		"jest-environment-jsdom": "^29.4.0",
 		"jest-watch-typeahead": "^2.2.2",
 		"postcss": "^8.4.21",
+		"rollup-plugin-visualizer": "^5.9.0",
 		"rome": "^11.0.0",
 		"stylelint": "^14.16.1",
 		"stylelint-config-standard": "^29.0.0",
