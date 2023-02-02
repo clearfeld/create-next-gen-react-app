@@ -1,0 +1,66 @@
+# Remove Recoil
+
+import { Tab, Tabs } from 'nextra-theme-docs'
+
+Recoil is the default global state management solution thats included with each template.
+If you'd like to remove it and use a different global state management solution this is what needs to be done to remove recoil.
+
+## Uninstall
+
+<Tabs items={['npm', 'pnpm']}>
+  <Tab>
+    ```bash copy
+    npm uninstall recoil
+    ````
+  </Tab>
+  <Tab>
+    ````bash copy
+    pnpm remove recoil
+    ````
+  </Tab>
+</Tabs>
+
+## Remove from `src/App.tsx`
+
+Remove the following highlighted lines from `src/App.tsx`.
+
+```typescript filename="src/App.tsx" {3-4, 8-9, 19-23, 29}
+/// ...
+
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { T_CountStateData, T_SetCountStateData, CountStateData } from "@store/CountAtom";
+
+/// ...
+
+	const getCountState: T_CountStateData = useRecoilValue(CountStateData);
+	const setCountState: T_SetCountStateData = useSetRecoilState(CountStateData);
+
+/// ...
+
+				<Route
+					path="Global"
+					element={
+						<div className="route-block">
+							<button
+								onClick={() => {
+									const newState: T_CountStateData = {
+										value: getCountState.value + 1,
+									};
+
+									setCountState(newState);
+								}}
+							>
+								increment
+							</button>
+
+							<p>Count: {getCountState.value}</p>
+						</div>
+					}
+				/>
+
+/// ...
+```
+
+## Delete atoms in store
+
+Then delete the file `src/store/CountAtom.ts`.
