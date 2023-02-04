@@ -14,7 +14,6 @@ export default defineConfig(({ command, mode }) => {
 	Object.assign(process.env, loadEnv(mode, process.cwd()));
 
 	if (command === "serve") {
-
 		// Dev config
 
 		return defineConfig({
@@ -25,6 +24,11 @@ export default defineConfig(({ command, mode }) => {
 				// Relative to the root
 				outDir: "../dist",
 				emptyOutDir: true,
+				rollupOptions: {
+					input: {
+						app: "../public/index.html",
+					},
+				},
 			},
 
 			server: {
@@ -70,7 +74,6 @@ export default defineConfig(({ command, mode }) => {
 			},
 		});
 	} else {
-
 		// prod config
 
 		return defineConfig({
@@ -81,10 +84,12 @@ export default defineConfig(({ command, mode }) => {
 				// Relative to the root
 				outDir: "../dist",
 				emptyOutDir: true,
-
 				// https://rollupjs.org/configuration-options/
-				// rollupOptions: {
-				// }
+				rollupOptions: {
+					input: {
+						app: "../public/index.html",
+					},
+				},
 			},
 
 			define: {
