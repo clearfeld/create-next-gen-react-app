@@ -27,7 +27,7 @@ const Config = {
 	plugins: [
 		new Dotenv(),
 		new HtmlWebpackPlugin({
-			template: path.resolve(__dirname, "../public/index.html"),
+			template: path.resolve(__dirname, "../src/index.html"),
 		}),
 		new MiniCssExtractPlugin({
 			filename: projectPackageJson.name + ".[name].[chunkhash].css",
