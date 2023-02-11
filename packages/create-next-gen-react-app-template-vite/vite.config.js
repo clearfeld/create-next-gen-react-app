@@ -1,4 +1,4 @@
-import path from "node:path";
+import { resolve } from "node:path";
 import { defineConfig, loadEnv } from "vite";
 import { createHtmlPlugin } from "vite-plugin-html";
 // import react from "@vitejs/plugin-react";
@@ -27,11 +27,8 @@ export default defineConfig(({ command, mode }) => {
 				// Relative to the root
 				outDir: "../dist",
 				emptyOutDir: true,
-				rollupOptions: {
-					input: {
-						app: "../public/index.html",
-					},
-				},
+				// rollupOptions: {
+				// },
 			},
 
 			server: {
@@ -65,14 +62,14 @@ export default defineConfig(({ command, mode }) => {
 				}),
 
 				eslint({
-					overrideConfigFile: path.resolve(__dirname, ".eslintrc.cjs"),
+					overrideConfigFile: resolve(__dirname, ".eslintrc.cjs"),
 				}),
 			],
 
 			resolve: {
 				alias: {
-					"@src": path.resolve(__dirname, "src"),
-					"@store": path.resolve(__dirname, "src/store"),
+					"@src": resolve(__dirname, "src"),
+					"@store": resolve(__dirname, "src/store"),
 				},
 			},
 		});
@@ -88,11 +85,8 @@ export default defineConfig(({ command, mode }) => {
 				outDir: "../dist",
 				emptyOutDir: true,
 				// https://rollupjs.org/configuration-options/
-				rollupOptions: {
-					input: {
-						app: "../public/index.html",
-					},
-				},
+				// rollupOptions: {
+				// },
 			},
 
 			define: {
@@ -122,7 +116,7 @@ export default defineConfig(({ command, mode }) => {
 				}),
 
 				eslint({
-					overrideConfigFile: path.resolve(__dirname, ".eslintrc.cjs"),
+					overrideConfigFile: resolve(__dirname, ".eslintrc.cjs"),
 				}),
 
 				// NOTE: must be the last plugin
@@ -133,8 +127,8 @@ export default defineConfig(({ command, mode }) => {
 
 			resolve: {
 				alias: {
-					"@src": path.resolve(__dirname, "src"),
-					"@store": path.resolve(__dirname, "src/store"),
+					"@src": resolve(__dirname, "src"),
+					"@store": resolve(__dirname, "src/store"),
 				},
 			},
 		});
