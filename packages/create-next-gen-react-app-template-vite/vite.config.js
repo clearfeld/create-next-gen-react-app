@@ -7,6 +7,9 @@ import svgr from "vite-plugin-svgr";
 import checker from "vite-plugin-checker";
 import eslint from "vite-plugin-eslint";
 import { visualizer } from "rollup-plugin-visualizer";
+import dns from "dns";
+
+dns.setDefaultResultOrder("verbatim");
 
 export default defineConfig(({ command, mode }) => {
 	// Loads our env file and merges it with Node's process.env
