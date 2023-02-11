@@ -85,8 +85,13 @@ export default defineConfig(({ command, mode }) => {
 				outDir: "../dist",
 				emptyOutDir: true,
 				// https://rollupjs.org/configuration-options/
-				// rollupOptions: {
-				// },
+				rollupOptions: {
+					output: {
+						manualChunks: {
+							vendor: ["react", "react-dom", "react-router-dom", "recoil", "web-vitals"],
+						},
+					},
+				},
 			},
 
 			define: {
