@@ -71,5 +71,9 @@ module.exports = {
 
 	rules: {
 		"no-restricted-globals": ["error"].concat(restrictedGlobals),
+
+		// NOTE(clearfeld): set to warnings to better work with Storybook
+		"@typescript-eslint/await-thenable": "warn",
+		"react/no-unescaped-entities": "warn"
 	},
 };
