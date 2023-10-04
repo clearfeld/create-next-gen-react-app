@@ -132,6 +132,9 @@ const Config = {
 				use: [
 					{
 						loader: "@svgr/webpack",
+						options: {
+              						exportType: "named",
+            					},
 					},
 				],
 			},
