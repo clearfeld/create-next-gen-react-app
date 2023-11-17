@@ -84,7 +84,7 @@ await inquirer
 			type: "list",
 			name: "bundler",
 			message: "Template:",
-			choices: ["vite", "webpack", "experimental"],
+			choices: ["vite", "webpack (deprecated)", "experimental"],
 		},
 
 		{

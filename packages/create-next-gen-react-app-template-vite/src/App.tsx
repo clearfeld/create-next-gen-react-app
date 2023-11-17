@@ -14,7 +14,7 @@ import {
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { T_CountStateData, T_SetCountStateData, CountStateData } from "@store/CountAtom";
 
-import { ReactComponent as LogoSVG } from "./logo.svg";
+import LogoSVG from "./logo.svg?react";
 import CheckboxWithLabel from "./CheckboxWithLabel";
 
 function App() {
