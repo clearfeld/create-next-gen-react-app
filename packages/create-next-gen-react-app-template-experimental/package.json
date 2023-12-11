@@ -44,7 +44,7 @@
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
     "@storybook/addon-a11y": "^7.5.3",
     "@storybook/addon-actions": "^7.5.3",
-    "@storybook/addon-essentials": "7.5.3",
+    "@storybook/addon-essentials": "7.6.4",
     "@storybook/addon-interactions": "7.5.3",
     "@storybook/addon-jest": "^7.5.3",
     "@storybook/addon-links": "7.5.3",
